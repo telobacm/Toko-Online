@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "nama": "Telo Bacem",
+    "harga": 1084,
+    "gambar": "telo-bacem.jpg"
+  },
+  {
+    "id": 2,
+    "nama": "Sego Padang",
+    "harga": 5037,
+    "gambar": "sego-padang.jpg"
+  },
+  {
+    "id": 3,
+    "nama": "Sego Kucing",
+    "gambar": "sego-kucing.jpg",
+    "harga": 2529
+  },
+  {
+    "id": 4,
+    "nama": "Tahu Susur",
+    "harga": 1062,
+    "gambar": "tahu-susur.jpg"
+  },
+  {
+    "id": 5,
+    "nama": "Bakwan",
+    "harga": 1047,
+    "gambar": "bakwan.jpg"
+  },
+  {
+    "id": 6,
+    "nama": "Mendoan",
+    "harga": 1037,
+    "gambar": "mendoan.jpg"
+  },
+  {
+    "id": 7,
+    "nama": "Kopi Ireng",
+    "harga": 2542,
+    "gambar": "kopi-ireng.jpg"
+  },
+  {
+    "id": 8,
+    "nama": "Teh panas",
+    "harga": 2213,
+    "gambar": "teh-panas.jpg"
+  },
+  {
+    "id": 9,
+    "nama": "Es Teh",
+    "harga": 3184,
+    "gambar": "es-teh.jpg"
+  }
+]
