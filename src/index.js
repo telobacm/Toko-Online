@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import Angkringan from "./Angkringan";
+import RouterEkzampel from "./RouterEkzampel";
+// import Angkringan from "./Angkringan";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Angkringan />
+    <RouterEkzampel />
   </React.StrictMode>,
   document.getElementById("root")
 );

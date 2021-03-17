@@ -1,24 +1,19 @@
 import React, { Component } from "react";
-import {
-  Table,
-  Col,
-  Container,
-  Row,
-  Navbar,
-  Button,
-  ButtonGroup,
-  Card,
-  CardDeck,
-  Modal,
-  ListGroup,
-  Badge,
-} from "react-bootstrap";
+import { Table, Col, Container, Row, Navbar, Button, ButtonGroup, Card, CardDeck, Modal, ListGroup, Badge } from "react-bootstrap";
 import Cards from "./cards.json";
 import Swal from "sweetalert2";
 
 export default class Angkringan extends Component {
+  constructor(props) {
+    super(props);
+    localStorage.setItem("Cards", JSON.stringify(this.state.Cards));
+    console.log("constructor");
+  }
   state = {
     Cards,
+    /* ini kepaksa kalo ada yang ngehapus local Storage kita kudu matiin dulu
+    yang baris bawah, terus kita ambil dari JSON pake yang baris atas ini*/
+    Cards: JSON.parse(localStorage.getItem("Cards")) || [],
     Bungkus: [],
     show: false,
     Total: "",
@@ -29,6 +24,7 @@ export default class Angkringan extends Component {
     const Bungkus = bungkusLocal ? JSON.parse(bungkusLocal) : [];
     this.setState({ Bungkus });
     console.log("Komponen sampun dimuat");
+    localStorage.setItem("Cards", JSON.stringify(this.state.Cards));
   }
   componentDidUpdate() {
     console.log("Komponen sampun diapdet");
@@ -114,13 +110,7 @@ export default class Angkringan extends Component {
               <ProductCards Cards={Cards} bungkusin={this.bungkusin} />
             </Row>
           </Col>
-          <Bungkus
-            Bungkus={this.state.Bungkus}
-            bungkusin={this.bungkusin}
-            nggajadi={this.nggajadi}
-            bukaModal={this.bukaModal}
-            totalan={this.totalan}
-          />
+          <Bungkus Bungkus={this.state.Bungkus} bungkusin={this.bungkusin} nggajadi={this.nggajadi} bukaModal={this.bukaModal} totalan={this.totalan} />
           <Bayar
             show={this.state.show}
             Bungkus={this.state.Bungkus}
@@ -248,13 +238,7 @@ class Bungkus extends Component {
 class Bayar extends Component {
   render() {
     return (
-      <Modal
-        show={this.props.show}
-        tutupModal={this.props.tutupModal}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
+      <Modal show={this.props.show} tutupModal={this.props.tutupModal} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
         <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">
             <h3>
